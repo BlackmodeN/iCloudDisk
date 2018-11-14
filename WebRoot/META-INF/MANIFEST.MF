@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Implementation-Title: cloud
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Administrator
+Implementation-Vendor-Id: com.zhning
+Spring-Boot-Version: 2.0.5.RELEASE
+Main-Class: org.springframework.boot.loader.WarLauncher
+Start-Class: com.zhning.cloud.CloudApplication
+Spring-Boot-Classes: WEB-INF/classes/
+Spring-Boot-Lib: WEB-INF/lib/
+Created-By: Apache Maven 3.3.9
+Build-Jdk: 1.8.0_161
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/cloud
+
