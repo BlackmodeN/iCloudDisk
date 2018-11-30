@@ -17,7 +17,37 @@
    打包成war放到Tomcat中,注意application.properties中的配置需要修改,前端文件中的href需要修改。
 ## 预览
  ![Image text](https://github.com/BlackmodeN/iCloudDisk/blob/master/WebRoot/images/index.png)；
- ![Image text](https://github.com/BlackmodeN/iCloudDisk/blob/master/WebRoot/images/userSpace.png)
+##sql
+
+
+USE `icloud`;
+
+
+CREATE TABLE `file` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `filename` varchar(255) NOT NULL COMMENT '文件名',
+  `filepath` varchar(600) NOT NULL COMMENT '文件路径',
+  `filesize` varchar(255) NOT NULL COMMENT '文件大小',
+  `createtime` date DEFAULT NULL COMMENT '创建日期',
+  `canshare` int(2) NOT NULL COMMENT '0表示私有 1表示共享',
+  `user_id` int(11) unsigned NOT NULL,
+  `MD5` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `file_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `user` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(16) NOT NULL,
+  `comment` varchar(255) DEFAULT NULL COMMENT '注释',
+  `isvip` int(11) NOT NULL COMMENT '1是vip 0不是',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+
  
  
 
